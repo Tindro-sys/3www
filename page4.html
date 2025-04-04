@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PAGE #4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+   <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="page1.html">Page1</a></li>
+      <li><a href="page2.html">Page2</a></li>
+      <li><a href="page3.html">Page3</a></li>
+      <li><a href="page4.html">Page4</a></li>
+      <li><a href="page5.html">Page5</a></li>
+</ul>
+
+<div class="w3-container w3-green">
+  <h1>W3Schools Demo</h1> 
+  <p>Resize this responsive page!</p> 
+</div>
+
+<div class="w3-row-padding">
+  <div class="w3-third">
+    <h2>London</h2>
+    <p>London is the capital city of England.</p>
+    <p>It is the most populous city in the United Kingdom,
+    with a metropolitan area of over 13 million inhabitants.</p>
+  </div>
+
+  <div class="w3-third">
+    <h2>Paris</h2>
+    <p>Paris is the capital of France.</p> 
+    <p>The Paris area is one of the largest population centers in Europe,
+    with more than 12 million inhabitants.</p>
+  </div>
+
+  <div class="w3-third">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+    <p>It is the center of the Greater Tokyo Area,
+    and the most populous metropolitan area in the world.</p>
+  </div>
+</div>
+
+<hr>
+
+Lorem ipsum <div class="tagcolor" style="color: mediumblue;">i am a div</div class="tagcolor" style="color: mediumlblue"> dolor sit element
+
+<hr>
+
+<h1>HTML Geolocation</h1>
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+<hr>
+
+<!-- 
+    Gestion des erreurs et des rejets
+    Le deuxième paramètre de la méthode est utilisé pour gérer Erreurs.
+    Il spécifie une fonction à exécuter si elle ne parvient pas à obtenir l’emplacement de l’utilisateur :getCurrentPosition()
+-->
+
+<h1>HTML Geolocation_2</h1>
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
+</script>
+
+<hr>
+
+<p>Count numbers: <output id="result"></output></p>
+<button onclick="startWorker()">Start Worker</button>
+<button onclick="stopWorker()">Stop Worker</button>
+
+<script>
+var w;
+
+function startWorker() {
+  if (typeof(Worker) !== "undefined") {
+    if (typeof(w) == "undefined") {
+      w = new Worker("demo_workers.js");
+    }
+    w.onmessage = function(event) {
+      document.getElementById("result").innerHTML = event.data;
+    };
+  } else {
+    document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
+  }
+}
+
+function stopWorker() {
+  w.terminate();
+  w = undefined;
+}
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="refresh" content="30">
+   <title>PAGE #2</title>
+   <link rel="stylesheet" href="./css/style2.css">
+   <style>
+      * {
+         box-sizing: border-box;
+       }
+       
+       .left {
+         background-color: #2196F3;
+         padding: 20px;
+         float: left;
+         width: 20%; /* The width is 20%, by default */
+       }
+       
+       .main {
+         background-color: #f1f1f1;
+         padding: 20px;
+         float: left;
+         width: 60%; /* The width is 60%, by default */
+       }
+       
+       .right {
+         background-color: #04AA6D;
+         padding: 20px;
+         float: left;
+         width: 20%; /* The width is 20%, by default */
+       }
+       
+       /* Use a media query to add a break point at 800px: */
+       @media screen and (max-width: 800px) {
+         .left, .main, .right {
+           width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+         }
+       }
+   </style>
+
+</head>
+<body>
+
+   <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="page1.html">Page1</a></li>
+      <li><a href="page2.html">Page2</a></li>
+      <li><a href="page3.html">Page3</a></li>
+      <li><a href="page4.html">Page4</a></li>
+      <li><a href="page5.html">Page5</a></li>
+   </ul>
+
+   <button type="button"
+   onclick="document.getElementById('demo').innerHTML = Date()">
+   Click pour afficher date et heure.</button>
+
+   <p id="demo"></p>
+
+
+   <a href="index.html">Page d'acceuille</a>
+   <a href="index.html#C4">Ny Karazana Loko</a>
+
+   <h1 id="myheader">PAGE DE REFELEXION N° 2</h1>
+   <button onclick="displayResult()">Changer le Titre</button>
+
+   <h3>Script Example sur JavaScript</h3>
+   <p>Cliquer sur un Bouton pour Masquer les élement avec un nom de class "city":</p>
+   <button onclick="myFunction()">Masquer les elements</button>
+
+      <h2 class="city">Atsinanana</h2>
+         <p>Tamatave, is the capital city of Madagascar. It is the most populous city in the east area, with a metropolitan city of over 5 million inhabitants.</p>
+         <p>Toamasina, is the capital <span class="note">traditionnal name of the city</span> and it is the most
+            center of the city in the east area, with a Betsimisaraka ethnies over 60% of the habitants.</p>
+
+
+   
+      <h2 class="city">Alaotra Mangoro</h2>
+         <p>Ambatondrazaka, is the capital city of Region Alaotra Mangoro. It is the most populous city in the east area, with a small city of over 1 million inhabitants.</p>
+         <p>Ambato, is the capital <span class="note">traditionnal name of the city</span> and it is the most
+            center of the city in the east area, with a Sihanaka ethnies over 95% of the habitants.</p>
+
+
+  
+      <h2 class="city">Analamanga</h2>
+         <p>Antananarivo, is the capital city of the Madagascar country. It is the most populous on the city, with a big and large metropolitan of over 10 million inhabitants.</p>
+         <p>Tanà, is the capital <span class="note">traditionnal name of the city</span> and it is the most
+            center of the city in the east area, with a Merina ethnies over 98% of the habitants.</p>
+
+
+<h2>HTML iFRAME PAGE</h2>
+<p>Voici une iFrame ppage</p>
+
+<iframe src="demo_iframe1.htm" height="200" width="300" title="Example iFrame1"></iframe>
+
+<iframe src="demo_iframe2.htm" style="height:200; width:300; border:none" title="Example iFrame2"></iframe>
+
+<iframe src="demo_iframe3.htm" style="height:200; width:300; border:2px solid red" title="Example iFrame3"></iframe>
+
+<iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"></iframe>
+<p><a href="https://www.3wschools.com" target="iframe_a">W3Schools.com</a></p>
+
+<!--Essaie -->
+
+<h2>Media Queries</h2>
+<p>Resize the browser window.</p>
+
+<p>Make sure you reach the breakpoint at 800px when resizing this frame.</p>
+
+<div class="left">
+  <p>Left Menu</p>
+</div>
+
+<div class="main">
+  <p>Main Content</p>
+</div>
+
+<div class="right">
+  <p>Right Content</p>
+</div>
+
+
+<script>
+   function myFunction() {
+      var x = document.getElementsByClassName("city");
+      for (var i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+      }
+   }
+</script>
+
+<script>
+   function.displayResult() {
+      document.getElementById("myheader").innerHTML = "Have a nice day!";
+   }
+</script>
+
+</body>
+</html>
